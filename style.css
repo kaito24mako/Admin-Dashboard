@@ -14,8 +14,6 @@ html {
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
-
-    /* outline: 1px solid black; */
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -46,11 +44,14 @@ body {
     height: 100vh;
 }
 :root {
+    --color-blue: rgb(40, 148, 248);
+    --color-white: rgb(248, 248, 248);
     --size-header: clamp(1.5rem, 2vw, 2rem);
-    --size-vlarge: clamp(1rem, 1.5vw, 1.5rem);
-    --spacing-large: 1.5em;
-    --spacing-medium: 1em;
-    --spacing-small: 0.5em;
+    --size-vlarge: clamp(1.3rem, 1.7vw, 1.7rem);
+    --spacing-vlarge: 2.5em;
+    --spacing-large: 2em;
+    --spacing-medium: 1.5em;
+    --spacing-small: 1em;
 }
 
 .sidebar-cont {
@@ -59,26 +60,30 @@ body {
     grid-row: 1 / 3;
     grid-template-rows: 1fr 4fr 2fr 4fr;
 
-    padding: var(--spacing-medium) var(--spacing-medium) 0 var(--spacing-medium);
-
-    background-color: rgb(80, 161, 236);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-weight: bold;
 }
 .sidebar-cont > div {
     font-size: var(--size-vlarge);
 }
 .sidebar-cont > .title {
     display: flex;
-    gap: 0.3em;
 
     grid-row: 1;
+
+    padding: var(--spacing-medium);
+    gap: 0.3em;
 
     font-size: var(--size-header);
 }
 .sidebar-cont > .tabs-one, .tabs-two, .tabs-empty {
-    padding-left: calc(var(--spacing-small) + 1px);
+    padding-left: var(--spacing-vlarge);
+    padding-right: var(--spacing-vlarge);
 }
 .sidebar-cont > .tabs-one {
     grid-row: 2;
+    margin-bottom: var(--spacing-large);  /* add space between .tabs-one and .tabs-two */
 }
 .sidebar-cont > .tabs-two {
     grid-row: 3;
@@ -86,30 +91,32 @@ body {
 .sidebar-cont > .tabs-empty {
     grid-row: 4;
 }
-.title svg {
-    width: var(--spacing-large); 
-    height: var(--spacing-large); 
+.sidebar-cont svg {
     flex-shrink: 0;
+
+    width: var(--spacing-medium); 
+    height: var(--spacing-medium);
+    
+    fill: var(--color-white);
 }
+.title svg {
+    width: var(--spacing-medium); 
+    height: var(--spacing-medium); 
+}
+
 .tabs-one,
 .tabs-two {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-medium); 
-}
-.tabs-one svg,
-.tabs-two svg {
-    width: var(--spacing-medium); 
-    height: var(--spacing-medium);
-    flex-shrink: 0;
+
+    gap: var(--spacing-small); 
 }
 .tabs-one > div,
 .tabs-two > div {
     display: flex;
-    align-items: center;
+
     gap: var(--spacing-small); 
 }
-
 
 .header-cont {
     grid-column: 2;
