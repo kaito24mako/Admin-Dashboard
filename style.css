@@ -60,7 +60,9 @@ body {
     display: grid;
 
     grid-row: 1 / 3;
-    grid-template-rows: 1fr 4fr 2fr 4fr;
+    grid-template-rows: 0.5fr 2fr 2fr 4fr;
+
+    gap: var(--spacing-large);
 
     background-color: var(--color-blue);
     color: var(--color-white);
@@ -69,7 +71,7 @@ body {
     transition: 0.2s ease;
 }
 /* Tabs */
-.sidebar-cont > div {
+.sidebar-cont button {
     font-size: var(--size-vlarge);
 }
 .title {
@@ -77,18 +79,14 @@ body {
 
     grid-row: 1;
 
-    padding: var(--spacing-medium);
+    padding: var(--spacing-small);
     gap: 0.3em;
 
     font-size: var(--size-header);
 }
-.tabs-one, .tabs-two, .tabs-empty {
-    padding-left: var(--spacing-vlarge);
-    padding-right: var(--spacing-vlarge);
-}
 .tabs-one {
     grid-row: 2;
-    margin-bottom: var(--spacing-large);  /* add space between .tabs-one and .tabs-two */
+    margin-bottom: var(--spacing-vlarge);  /* add space between .tabs-one and .tabs-two */
 }
 .tabs-two {
     grid-row: 3;
@@ -114,10 +112,13 @@ body {
     display: flex;
     flex-direction: column;
 
+    padding-left: var(--spacing-vlarge);
+    padding-right: var(--spacing-vlarge);
+    
     gap: var(--spacing-small); 
 }
-.tabs-one > div,
-.tabs-two > div {
+.tabs-one button,
+.tabs-two button {
     display: flex;
 
     gap: var(--spacing-small); 
@@ -137,7 +138,7 @@ body {
 
 /* ==== MEDIA QUERIES ==== */
 @media (max-width: 900px) {
-    .sidebar-cont p,
+    .sidebar-cont button > p,
     .title h1,
     .title svg {
         display: none;
