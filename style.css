@@ -1,4 +1,4 @@
-/* Reset */
+/* ==== RESET ==== */
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -34,7 +34,7 @@ button {
     cursor: pointer;
 }
 
-/* General */
+/* ==== GENERAL ==== */
 body {
     display: grid;
 
@@ -54,6 +54,8 @@ body {
     --spacing-small: 1em;
 }
 
+/* ==== SIDEBAR ==== */
+/* General */
 .sidebar-cont {
     display: grid;
 
@@ -66,10 +68,11 @@ body {
 
     transition: 0.2s ease;
 }
+/* Tabs */
 .sidebar-cont > div {
     font-size: var(--size-vlarge);
 }
-.sidebar-cont > .title {
+.title {
     display: flex;
 
     grid-row: 1;
@@ -79,20 +82,21 @@ body {
 
     font-size: var(--size-header);
 }
-.sidebar-cont > .tabs-one, .tabs-two, .tabs-empty {
+.tabs-one, .tabs-two, .tabs-empty {
     padding-left: var(--spacing-vlarge);
     padding-right: var(--spacing-vlarge);
 }
-.sidebar-cont > .tabs-one {
+.tabs-one {
     grid-row: 2;
     margin-bottom: var(--spacing-large);  /* add space between .tabs-one and .tabs-two */
 }
-.sidebar-cont > .tabs-two {
+.tabs-two {
     grid-row: 3;
 }
-.sidebar-cont > .tabs-empty {
+.tabs-empty {
     grid-row: 4;
 }
+/* SVG and their layouts */
 .sidebar-cont svg {
     flex-shrink: 0;
 
@@ -105,7 +109,6 @@ body {
     width: var(--spacing-medium); 
     height: var(--spacing-medium); 
 }
-
 .tabs-one,
 .tabs-two {
     display: flex;
@@ -120,16 +123,19 @@ body {
     gap: var(--spacing-small); 
 }
 
+/* ==== HEADER ==== */
 .header-cont {
     grid-column: 2;
 }
 
+/* ==== MAIN ==== */
 .main-cont {
     grid-column: 2;
 
     background-color: rgb(235, 233, 233);
 }
 
+/* ==== MEDIA QUERIES ==== */
 @media (max-width: 900px) {
     .sidebar-cont p,
     .title h1,
