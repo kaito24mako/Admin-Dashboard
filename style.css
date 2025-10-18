@@ -52,6 +52,8 @@ body {
     --spacing-large: 2em;
     --spacing-medium: 1.5em;
     --spacing-small: 1em;
+    --spacing-vsmall: 0.3em;
+    --shadow-blue: 2px 4px 10px rgb(32, 106, 175); 
 }
 
 /* ==== SIDEBAR ==== */
@@ -122,6 +124,13 @@ body {
     display: flex;
 
     gap: var(--spacing-small); 
+}
+/* Hover effects */
+button:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+button:active {
+    transform: scale(0.99);
 }
 
 /* ==== HEADER ==== */
