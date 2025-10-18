@@ -63,6 +63,8 @@ body {
     background-color: var(--color-blue);
     color: var(--color-white);
     font-weight: bold;
+
+    transition: 0.2s ease;
 }
 .sidebar-cont > div {
     font-size: var(--size-vlarge);
@@ -126,5 +128,13 @@ body {
     grid-column: 2;
 
     background-color: rgb(235, 233, 233);
+}
+
+@media (max-width: 900px) {
+    .sidebar-cont p,
+    .title h1,
+    .title svg {
+        display: none;
+    }
 }
 
