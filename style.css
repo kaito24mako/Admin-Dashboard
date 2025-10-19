@@ -240,12 +240,25 @@ button:active {
 }
 
 /* ==== MEDIA QUERIES ==== */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
+
+    /* Hide sidebar text */
     .sidebar-cont button > p,
     .title h1,
     .title svg,
     .top-right-group span {
         display: none;
     }
+    
+    /* Re-position bottom-right header buttons */
+    .bottom-wrapper {
+    flex-direction: column;
+    align-items: flex-start; 
+    }
+    .bottom-right-group {
+    flex-wrap: nowrap;
+    }
 }
+
+
 
