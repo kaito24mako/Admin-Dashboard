@@ -48,6 +48,7 @@ body {
     --color-white: rgb(248, 248, 248);
     --size-header: clamp(1.5rem, 2vw, 2rem);
     --size-vlarge: clamp(1.3rem, 1.7vw, 1.7rem);
+    --size-large: clamp(1.1rem, 1.3vw, 1.4rem);
     --spacing-vlarge: 2.5em;
     --spacing-large: 2em;
     --spacing-medium: 1.5em;
@@ -96,7 +97,7 @@ body {
 .tabs-empty {
     grid-row: 4;
 }
-/* SVG and their layouts */
+/* Images and their layouts */
 .sidebar-cont svg {
     flex-shrink: 0;
 
@@ -136,7 +137,53 @@ button:active {
 /* ==== HEADER ==== */
 .header-cont {
     grid-column: 2;
+
+    width: calc(100vw - 1fr);
+
+    padding: var(--spacing-small) var(--spacing-vlarge);
+
+    font-size: var(--size-large);
 }
+/* Top header */
+.top-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    gap: var(--spacing-medium);
+}
+.top-wrapper svg {
+    flex-shrink: 0;
+
+    max-width: none;
+    width: var(--spacing-medium); 
+    height: var(--spacing-medium);
+}
+/* Top-left */
+.top-left-group {
+    display: flex;
+    align-items: center;
+
+    gap: var(--spacing-small); 
+}
+.top-left-group > input {
+    width: 35vw;
+    
+    background-color: rgb(219, 219, 219);
+    border-radius: 10px;
+}
+/* Top-right */
+.top-right-group {
+    display: flex;
+    align-items: center;
+
+    gap: var(--spacing-medium); 
+}
+.top-right-group > img {
+    width: var(--spacing-large);
+}
+
+
+
 
 /* ==== MAIN ==== */
 .main-cont {
@@ -149,7 +196,8 @@ button:active {
 @media (max-width: 900px) {
     .sidebar-cont button > p,
     .title h1,
-    .title svg {
+    .title svg,
+    .top-right-group span {
         display: none;
     }
 }
