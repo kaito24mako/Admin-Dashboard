@@ -22,7 +22,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 img, picture, video, canvas, svg {
     display: block;
-    max-width: 100%;
 }
 button, input, textarea, select, a {
     font: inherit;
@@ -34,15 +33,7 @@ button {
     cursor: pointer;
 }
 
-/* ==== GENERAL ==== */
-body {
-    display: grid;
-
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 4fr;
-
-    height: 100vh;
-}
+/* ==== CUSTOM PROPERTIES ==== */
 :root {
     --color-blue: rgb(40, 148, 248);
     --color-white: rgb(248, 248, 248);
@@ -55,6 +46,24 @@ body {
     --spacing-small: 1em;
     --spacing-vsmall: 0.3em;
     --shadow-blue: 2px 4px 10px rgb(32, 106, 175); 
+    --transform-up-large: translateY(-3px) scale(1.04);
+    --transform-up-small: translateY(-3px) scale(1.01);
+}
+
+/* ==== GENERAL ==== */
+body {
+    display: grid;
+
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+
+    height: 100vh;
+}
+button:hover {
+    transform: var(--transform-up-large);
+}
+button:active {
+    transform: scale(0.99);
 }
 
 /* ==== SIDEBAR ==== */
@@ -126,13 +135,6 @@ body {
 
     gap: var(--spacing-small); 
 }
-/* Hover effects */
-button:hover {
-    transform: translateY(-3px) scale(1.04);
-}
-button:active {
-    transform: scale(0.99);
-}
 
 /* ==== HEADER ==== */
 .header-cont {
@@ -171,6 +173,12 @@ button:active {
     background-color: rgb(219, 219, 219);
     border-radius: 10px;
 }
+.top-left-group > input:focus {
+    outline: none;
+    border: none;
+    
+    transform: var(--transform-up-small);
+}
 /* Top-right */
 .top-right-group {
     display: flex;
@@ -178,7 +186,7 @@ button:active {
 
     gap: var(--spacing-medium); 
 }
-.top-right-group > img {
+.top-right-group img {
     width: var(--spacing-large);
 }
 
