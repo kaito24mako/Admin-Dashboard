@@ -1,4 +1,5 @@
 /* ==== RESET ==== */
+
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -26,7 +27,7 @@ img, picture, video, canvas, svg {
 button, input, textarea, select, a {
     font: inherit;
     color: inherit;
-    background-color: inherit;
+    background-color: transparent;
     border: none;
 }
 button {
@@ -34,6 +35,7 @@ button {
 }
 
 /* ==== CUSTOM PROPERTIES ==== */
+
 :root {
     --color-blue: rgb(40, 148, 248);
     --color-white: rgb(248, 248, 248);
@@ -54,6 +56,7 @@ button {
 }
 
 /* ==== GENERAL ==== */
+
 body {
     display: grid;
 
@@ -72,6 +75,7 @@ button:active {
 }
 
 /* ==== SIDEBAR ==== */
+
 /* General */
 .sidebar-cont {
     display: grid;
@@ -142,6 +146,7 @@ button:active {
 }
 
 /* ==== HEADER ==== */
+
 /* General */
 .header-cont {
     display: flex;
@@ -233,6 +238,7 @@ button:active {
 
 
 /* ==== MAIN ==== */
+
 .main-cont {
     grid-column: 2;
 
@@ -240,16 +246,16 @@ button:active {
 }
 
 /* ==== MEDIA QUERIES ==== */
+
 @media (max-width: 950px) {
 
     /* Hide sidebar text */
+    .title,
     .sidebar-cont button > p,
-    .title h1,
-    .title svg,
     .top-right-group span {
         display: none;
     }
-    
+
     /* Re-position bottom-right header buttons */
     .bottom-wrapper {
     flex-direction: column;
