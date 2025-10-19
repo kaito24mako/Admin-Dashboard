@@ -58,6 +58,8 @@ body {
     grid-template-rows: 1fr 4fr;
 
     height: 100vh;
+
+    font-size: var(--size-large);
 }
 button:hover {
     transform: var(--transform-up-large);
@@ -144,7 +146,6 @@ button:active {
 
     padding: var(--spacing-small) var(--spacing-vlarge);
 
-    font-size: var(--size-large);
 }
 /* Top header */
 .top-wrapper {
@@ -185,13 +186,12 @@ button:active {
     align-items: center;
 
     gap: var(--spacing-medium); 
+
+    font-weight: bold;
 }
 .top-right-group img {
     width: var(--spacing-large);
 }
-
-
-
 
 /* ==== MAIN ==== */
 .main-cont {
