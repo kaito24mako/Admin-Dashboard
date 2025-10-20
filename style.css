@@ -307,17 +307,37 @@ button:active {
 .card:hover {
     transform: rotate3d(1, 1, 0, 12deg);
     box-shadow: 1px 6px 10px rgba(128, 128, 128, 0.322);
-    border-left: 10px solid green;
+    border-left: 10px solid rgb(66, 127, 218);
 }
-
-
-
-
-
-
 /* Announcements */
 .announcements-wrapper {
-     
+    grid-column: 3;
+    grid-row: 1;
+}
+.announcements-group {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+
+    /* gap: var(--spacing-small); */
+
+    padding: var(--spacing-small);
+    margin-top: var(--spacing-vsmall);
+
+    background-color: white;
+    border-radius: 10px;
+}
+.announcements-group > *:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.announcement {
+    padding: var(--spacing-small);
+}
+.announcement > h3 {
+    font-size: var(--size-small);
+}
+.announcement > p {
+    font-size: var(--size-vsmall);
+    opacity: 0.6;
 }
 
 
@@ -341,6 +361,14 @@ button:active {
     }
     .bottom-right-group {
     flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    /* Hide announcements section */
+    .announcements-wrapper {
+        display: none;
     }
 }
 
