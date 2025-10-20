@@ -309,16 +309,10 @@ button:active {
     box-shadow: 1px 6px 10px rgba(128, 128, 128, 0.322);
     border-left: 10px solid rgb(66, 127, 218);
 }
-/* Announcements */
-.announcements-wrapper {
-    grid-column: 3;
-    grid-row: 1;
-}
+/* Announcements and Trending */
 .announcements-group {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-
-    /* gap: var(--spacing-small); */
+    grid-template-rows: repeat(3, fit-content);
 
     padding: var(--spacing-small);
     margin-top: var(--spacing-vsmall);
@@ -332,28 +326,65 @@ button:active {
 .announcement {
     padding: var(--spacing-small);
 }
-.announcement > h3 {
+.announcement > h3,
+.trend h3 {
     font-size: var(--size-small);
 }
-.announcement > p {
+.announcement > p,
+.trend p {
     font-size: var(--size-vsmall);
     opacity: 0.6;
 }
+.trending-group {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
 
+    padding: var(--spacing-medium);
+    margin-top: var(--spacing-vsmall);
 
+    gap: var(--spacing-small);
 
+    background-color: white;
+    border-radius: 10px;
+}
+.trend {
+    display: flex;
+    align-items: center;
+
+    gap: var(--spacing-small);
+}
+.trend img {
+    flex-shrink: 0;
+    
+    width: var(--spacing-large);
+}
+#trend1 {
+    grid-row: 1;
+}
+#trend2 {
+    grid-row: 2;
+}
+#trend3 {
+    grid-row: 3;
+}
+#trend4 {
+    grid-row: 4;
+}
 
 /* ==== MEDIA QUERIES ==== */
 
 @media (max-width: 950px) {
-
     /* Hide sidebar text */
     .title,
     .sidebar-cont button > p,
     .top-right-group span {
         display: none;
     }
-
+    .tabs-one,
+    .tabs-two {
+        padding-left: var(--spacing-small);
+        padding-right: var(--spacing-small);
+    }
     /* Re-position bottom-right header buttons */
     .bottom-wrapper {
     flex-direction: column;
@@ -363,12 +394,10 @@ button:active {
     flex-wrap: nowrap;
     }
 }
-
 @media (max-width: 600px) {
-    
-    /* Hide announcements section */
-    .announcements-wrapper {
-        display: none;
+    /* Remove grid layout on cards */
+    .card-group {
+        grid-template: none;
     }
 }
 
